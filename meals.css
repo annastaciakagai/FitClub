@@ -1,0 +1,34 @@
+
+body {
+    background-color: rgba(19, 6, 6, 0.733);
+    margin: 0; /* Reset default margins */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Align vertically to the center */
+    justify-content: center; /* Align horizontally to the center */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.main{
+    font-family: cursive;
+    font-size: 16px;
+    text-align: justify;
+    color: white;
+}
+
+table {
+    margin: 0 auto; /* Automatic margins for left and right centering */
+}
+table, th{
+    color: rgba(255, 255, 255, 0.733);
+}
+h1{
+    font-size: 20px;
+    text-align: center;
+}
+ul.a {
+    list-style-type: circle;
+  }
+.other{
+    color: rgba(255, 255, 255, 0.733);
+
+}
