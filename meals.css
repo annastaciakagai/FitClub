@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgba(19, 6, 6, 0.733);
+    background-color: rgba(17,19,23);
     margin: 0; /* Reset default margins */
     display: flex; /* Use flexbox for centering */
     align-items: center; /* Align vertically to the center */

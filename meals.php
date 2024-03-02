@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="meals.css">
 </head>
+
 <body style="margin: 50px;">
+
 <div class="main">
   <h1><i>Some meal Recommendations</i></h1>
   <br>
