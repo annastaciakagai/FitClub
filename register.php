@@ -1,30 +1,56 @@
 <?php
-require_once 'config.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "meals";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    // Retrieve form data
-    $username = $_POST['username'];
-    $lastname = $_POST['lastname'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $password = $_POST['password']; // Assuming you have a password field in your form
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Hash the password
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // **Data Validation and Sanitization** (replace with your validation logic)
+  $username = htmlspecialchars($_POST["username"]);
+  $lastname = htmlspecialchars($_POST["lastname"]);
+  $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
+  $password = $_POST["password"];
+
+  if (empty($username) || empty($lastname) || empty($email) || empty($password)) {
+    $error = "Please fill out all required fields.";
+  } else {
+
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Your SQL query to insert user data into the database
-    $stmt = $conn->prepare("INSERT INTO users (username, lastname, phone, email, password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $username, $lastname, $phone, $email, $hashed_password);
+    $sql = "INSERT INTO user (username, lastname, email, password) VALUES ('$username', '$lastname', '$email', '$hashed_password')";
 
-    if ($stmt->execute()) {
-        echo "Registration successful!";
-        // Redirect to login page or any other page after successful registration
+    if ($conn->query($sql) === TRUE) {
+      $message = "Registration successful!";
+      header("location: dashboard.html");
     } else {
-        echo "Error during registration: " . $stmt->error;
+      $error = "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    $stmt->close();
+  }
 }
 
 $conn->close();
+
 ?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php if(isset($error)) {  // Display error message if it exists
+  echo "<p style='color: red;'>$error</p>";
+} ?>
+
+<?php if(isset($message)) { // Display success message if it exists
+  echo "<p style='color: green;'>$message</p>";
+} ?>
+
+</body>
+</html>

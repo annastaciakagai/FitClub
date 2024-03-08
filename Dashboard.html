@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title> Fitclub</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="#"><img src="assets/logo.jpg" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="#">Dashboard</a></li>
+        <li class="link"><a href="bmi.html">BMI</a></li>
+        <li class="link"><a href="register.html">Register</a></li>
+        <li class="link"><a href="login.html">Log in</a></li>
+      </ul>
+      <button class="btn">FITCLUB</button>
+    </nav>
+
+    <header class="section__container header__container" id="home">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>BEST FITNESS IN THE TOWN</h4>
+        <h1><span>FITCLUB:</span>PARTNER IN YOUR FITNESS JOURNEY</h1>
+      </div>
+      <div class="header__image">
+        <img src="assets/header.jpg" alt="header" />
+      </div>
+    </header>
+
+    <section class="section__container explore__container" id="program">
+      <div class="explore__header">
+        <h2 class="section__header">EXPLORE OUR PROGRAM</h2>
+        <div class="explore__nav">
+          <span><i class="ri-arrow-left-line"></i></span>
+          <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div class="explore__grid">
+        <div class="explore__card">
+          <span><i class="ri-boxing-fill"></i></span>
+          <h4>BMI CALCULATION</h4>
+          <p>
+            The Body Mass Index can be computed simply by summing up an individual's weight and height. 
+            FitClub helps to calculate and track your BMI.        
+          </p>
+          <a href="bmi.html"> Try now<i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-heart-pulse-fill"></i></span>
+          <h4>Physical Fitness</h4>
+          <p>
+            It encompasses a range of activities that improve health, strength,
+            flexibility, and overall well-being. The activities are recommended based on your current BMI.
+          </p>
+          <a href="bmi.html ">Try Now<i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-run-line"></i></span>
+          <h4>Meal Plans</h4>
+          <p>
+            These healthy meal plans suppliment your lifestyle. FitClub has
+            included a list of recommended meal plans at different times of the day.
+          </p>
+          <a href="http://localhost:3000/meals.php">Try Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-shopping-basket-fill"></i></span>
+          <h4>Fat Lose</h4>
+          <p>
+            By tracking the calorie intake per meal, fat lose is possible. With each of our meal plans, comes a 
+            calorie_count.
+          </p>
+          <a href="http://localhost:3000/meals.php" type="text" target="_blank">Try Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container class__container"id="services" >
+      <div class="class__image">
+        <span class="bg__blur"></span>
+        <img src="assets/class-1.jpg" alt="class" class="class__img-1" />
+      </div>
+      <div class="class__content">
+        <h2 class="section__header">KNOW YOUR BMI</h2>
+        <p>
+            Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
+            BMI is an easy screening method for weight category—underweight, healthy weight, overweight, and obesity. Overweight is defined as having a BMI of 25.0 or more; a healthy range is 18.5 to 24.9.. 
+        </p>
+       <a href="/bmi.html"><button class="btn">BMI CALCULATOR</button></a>
+
+      </div>
+    </section>
+
+
+    <footer class="section__container footer__container" id="contact">
+      <span class="bg__blur"></span>
+      <span class="bg__blur footer__blur"></span>
+      <div class="footer__col">
+        <div class="footer__logo"><img src="assets/logo.jpg" alt="logo" /></div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">Business</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="/bmi.html">BMI Calculator</a>
+      </div>
+    </footer>
+  </body>
+</html>

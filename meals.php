@@ -10,6 +10,9 @@
 <body style="margin: 50px;">
 
 <div class="main">
+  <div class="header__content">
+      <span class="bg__blur"></span>
+      <span class="bg__blur header__blur"></span>
   <h1><i>Some meal Recommendations</i></h1>
   <br>
   <table class="table">
@@ -23,14 +26,14 @@
       </tr>
     </thead>
     <tbody>
-      
-    </div>
+  </div>
+</div>
 
       <?php
           $host = "localhost";
         //  $dbport = '3306';
           $username = "root";
-          $password ="localuser8870.";
+          $password ="";
           $dbname ="meals";
           $connection = new mysqli($host, $username, $password, $dbname);
           if($connection->connect_error) {

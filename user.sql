@@ -1,0 +1,2 @@
+USE meals;
+ CREATE TABLE user(id int(10) AUTO_INCREMENT PRIMARY KEY, username varchar(50) NOT NULL, lastname varchar(50) NOT NULL, phone varchar(50), email varchar(255) NOT NULL, password varchar(500) NOT NULL);

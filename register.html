@@ -77,7 +77,7 @@
 
   <div class="container">
     <h1>Fill in your details</h1>
-    <form action="register.php">
+    <form action="http://localhost:3000/register.php" method="post">
       <fieldset>
         <label>First Name</label>
         <input type="text" name="username" placeholder="First Name" required>
@@ -95,9 +95,16 @@
         <input type="email" name="email" placeholder="Email" required>
       </fieldset>
       <fieldset>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password" required>
+      </fieldset>
+      <fieldset>
         <button type="submit" name="submit">Submit</button>
       </fieldset>
     </form>
+    
+
+    
 
 	<p>Already have an account?<a href="login.html" class="login-link">Login here</a></p>
   </div>

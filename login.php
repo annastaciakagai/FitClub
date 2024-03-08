@@ -1,32 +1,56 @@
 <?php
-session_start();
-require_once 'config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginSubmit'])) {
-    // Retrieve form data
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "meals";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $loginEmail = $_POST['loginEmail'];
     $loginPassword = $_POST['loginPassword'];
 
-    // Your SQL query to check if the user exists
-    $stmt = $conn->prepare("SELECT id, email, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $loginEmail);
-    $stmt->execute();
-    $stmt->bind_result($user_id, $email, $hashed_password);
-    $stmt->fetch();
+  // **Database Query (using prepared statement)**
+  $sql = "SELECT id, email, password FROM user WHERE email = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("s", $loginEmail);
+  $stmt->execute();
+  $stmt->bind_result($user_id, $email, $hashed_password);
+  $stmt->fetch();
 
     if ($user_id && password_verify($loginPassword, $hashed_password)) {
         // Set session variables upon successful login
         $_SESSION['user_id'] = $user_id;
         $_SESSION['email'] = $email;
-        
-        echo "Login successful!";
-        // Redirect to the user's dashboard or another page
+      header("Location: dashboard.html"); // Replace with your welcome page
     } else {
-        echo "Invalid email or password";
+      $error = "Invalid username or password.";
     }
+  } else {
+    $error = "Invalid username or password.";
+  }
 
-    $stmt->close();
-}
+  $stmt->close();
+
 
 $conn->close();
+
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php if(isset($error)) {  
+    $error = "invalid login";
+    }
 ?>

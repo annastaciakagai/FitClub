@@ -32,3 +32,15 @@ ul.a {
     color: rgba(255, 255, 255, 0.733);
 
 }
+.header__container::before {
+    content: "FITNESS";
+    position: absolute;
+    bottom: 5rem;
+    right: 20rem;
+    font-size: 10rem;
+    font-weight: 700;
+    line-height: 7rem;
+    color: var(--white);
+    opacity: 0.05;
+    z-index: -1;
+  }
